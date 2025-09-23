@@ -1,4 +1,11 @@
 {
   "welcome": "Welcome",
-  "test": "Test"
+  "test": "Test",
+  "actions": "Actions",
+  "name": "Name",
+  "age": "Age",
+  "edit": "Edit",
+  "delete": "Delete",
+  "create": "Create",
+  "update": "Update"  
 }

@@ -1,4 +1,11 @@
 {
   "welcome": "歡迎",
-  "test": "測試"
+  "test": "測試",
+  "actions": "操作",
+  "name": "名字",
+  "age": "年齡",
+  "edit": "修改",
+  "delete": "刪除",
+  "create": "新增",
+  "update": "修改"
 }

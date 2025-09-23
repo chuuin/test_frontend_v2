@@ -3,3 +3,157 @@
     Noto Sans TC,
     serif;
 }
+
+// 全域設定
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  background: #111827; // gray-900
+  color: #fff;
+}
+
+// 容器
+.page {
+  min-height: 100vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+// --- 表單區 ---
+.form-box {
+  width: 100%;
+  max-width: 32rem;
+  background: #1f2937; // gray-800
+  border: 1px solid #4b5563; // gray-600
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+
+  h2 {
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+}
+
+// --- 表格區 ---
+.table-box {
+  width: 100%;
+  max-width: 48rem;
+  background: #1f2937;
+  border: 1px solid #4b5563;
+  border-radius: 1rem;
+  padding: 1.5rem;
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 0.5rem;
+      text-align: left;
+    }
+
+    thead {
+      border-bottom: 1px solid #4b5563;
+    }
+
+    tbody tr {
+      border-bottom: 1px solid #374151; // gray-700
+    }
+  }
+}
+
+// --- 📱 RWD 卡片化 ---
+@media (max-width: 768px) {
+  .table-box {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+      display: block;
+    }
+
+    thead {
+      display: none;
+    }
+
+    tr {
+      margin-bottom: 1rem;
+      border: 1px solid #4b5563;
+      border-radius: 0.5rem;
+      padding: 0.5rem;
+      background: #1f2937;
+    }
+
+    td {
+      padding: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+
+      &::before {
+        content: attr(data-label);
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+// --- 確認 Dialog 樣式 ---
+dialog {
+  border: none;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  background: #1f2937;
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  max-width: 20rem;
+  width: 90%;
+
+  // 置中
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  // 內文
+  p {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  .btn-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+}
+
+// Dialog 遮罩
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
